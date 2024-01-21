@@ -40,7 +40,7 @@
     "test-playwright": "yarn playwright test --config=tests/config/playwright.config.ts",
     "embed-tests-quick": "turbo run embed-tests-quick",
     "embed-tests": "turbo run embed-tests",
-    "test-e2e": "turbo run test-e2e --concurrency=1",
+    "test-e2e": "bash foo.bash",
     "type-check": "turbo run type-check",
     "embed-tests-prepare": "yarn workspace @calcom/prisma db-reset && yarn build"
   },
