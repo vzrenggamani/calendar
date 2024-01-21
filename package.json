@@ -41,6 +41,7 @@
     "embed-tests-quick": "turbo run embed-tests-quick",
     "embed-tests": "turbo run embed-tests",
     "test-e2e": "bash foo.bash",
+    "playwright": "bash foo.bash",
     "type-check": "turbo run type-check",
     "embed-tests-prepare": "yarn workspace @calcom/prisma db-reset && yarn build"
   },
